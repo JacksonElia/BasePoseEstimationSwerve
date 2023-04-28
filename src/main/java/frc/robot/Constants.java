@@ -109,9 +109,7 @@ public final class Constants {
     public static final double DRIVE_A = 0.72606 / 12.0;
   }
 
-  public static final class LimelightConstants {
-    public static final int FRAMES_BEFORE_ADDING_VISION_MEASUREMENT = 5;
-  
+  public static final class LimelightConstants {  
     public static final String FRONT_LIMELIGHT_NAME = "limelight-front";
     public static final String BACK_LIMELIGHT_NAME = "limelight-back";
 
