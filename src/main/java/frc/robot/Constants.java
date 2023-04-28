@@ -201,4 +201,98 @@ public final class Constants {
     public static final Rotation2d RED_END_ROTATION = Rotation2d.fromDegrees(180);
     public static final Rotation2d RED_HEADING = Rotation2d.fromDegrees(0);
   }
+
+  public static final class JoystickConstants {
+
+    public static final int DRIVER_JOYSTICK_ID = 0;
+    public static final int OPERATOR_JOYSTICK_ID = 1;
+    public static final int BUTTON_BOARD_1_ID = 2;
+    public static final int BUTTON_BOARD_2_ID = 3;
+
+    public static final int DRIVER_LEFT_STICK_X = 0;
+    public static final int DRIVER_LEFT_STICK_Y = 1;
+    public static final int DRIVER_RIGHT_STICK_X = 4;
+    public static final int DRIVER_RIGHT_STICK_Y = 5;
+    public static final int DRIVER_X_BUTTON_ID = 3;
+    public static final int DRIVER_A_BUTTON_ID = 1;
+    public static final int DRIVER_B_BUTTON_ID = 2;
+    public static final int DRIVER_Y_BUTTON_ID = 4;
+    public static final int DRIVER_LEFT_BUMPER_ID = 5;
+    public static final int DRIVER_RIGHT_BUMPER_ID = 6;
+    public static final int DRIVER_LEFT_TRIGGER_ID = 2;
+    public static final int DRIVER_RIGHT_TRIGGER_ID = 3;
+    public static final int DRIVER_BACK_BUTTON_ID = 7;
+    public static final int DRIVER_START_BUTTON_ID = 8;
+    public static final int DRIVER_LEFT_STICK_PRESS_ID = 9;
+    public static final int DRIVER_RIGHT_STICK_PRESS_ID = 10;
+
+    public static final int OPERATOR_LEFT_STICK_X = 0;
+    public static final int OPERATOR_LEFT_STICK_Y = 1;
+    public static final int OPERATOR_RIGHT_STICK_X = 4;
+    public static final int OPERATOR_RIGHT_STICK_Y = 5;
+
+    public static final int OPERATOR_X_BUTTON_ID = 3;
+    public static final int OPERATOR_A_BUTTON_ID = 1;
+    public static final int OPERATOR_B_BUTTON_ID = 2;
+    public static final int OPERATOR_Y_BUTTON_ID = 4;
+    public static final int OPERATOR_LEFT_BUMPER_ID = 5;
+    public static final int OPERATOR_RIGHT_BUMPER_ID = 6;
+    public static final int OPERATOR_LEFT_TRIGGER_ID = 2;
+    public static final int OPERATOR_RIGHT_TRIGGER_ID = 3;
+    public static final int OPERATOR_BACK_BUTTON_ID = 7;
+    public static final int OPERATOR_START_BUTTON_ID = 8;
+    public static final int OPERATOR_LEFT_STICK_PRESS_ID = 9;
+    public static final int OPERATOR_RIGHT_STICK_PRESS_ID = 10;
+
+    public static final int LEFT_DPAD_ID = 270;
+    public static final int UP_DPAD_ID = 0;
+    public static final int RIGHT_DPAD_ID = 90;
+    public static final int DOWN_DPAD_ID = 180;
+
+    // Top Six Buttons
+
+    /** Z axis */
+    public static final int BIG_BUTTON_1 = -1;
+    /** Z axis */
+    public static final int BIG_BUTTON_2 = 1;
+    /** X axis */
+    public static final int BIG_BUTTON_3 = -1;
+    /** X axis */
+    public static final int BIG_BUTTON_4 = 1;
+    /** Y axis */
+    public static final int BIG_BUTTON_5 = -1;
+    /** Y axis */
+    public static final int BIG_BUTTON_6 = 1;
+
+    // Joystick 1 Autoplace Buttons
+    public static final int BUTTON_1 = 1;
+    public static final int BUTTON_2 = 2;
+    public static final int BUTTON_3 = 3;
+    public static final int BUTTON_4 = 4;
+    public static final int BUTTON_5 = 5;
+    public static final int BUTTON_6 = 6;
+    public static final int BUTTON_7 = 7;
+    public static final int BUTTON_8 = 8;
+    public static final int BUTTON_9 = 9;
+    public static final int BUTTON_10 = 10;
+    public static final int BUTTON_11 = 11;
+    public static final int BUTTON_12 = 1; // Z axis going forwards
+    public static final int BUTTON_13 = 0; // POV Joystick 1
+    public static final int BUTTON_14 = 180; // POV Joystick 1
+    public static final int BUTTON_15 = 270; // POV Joystick 1
+    public static final int BUTTON_16 = 90; // POV Joystick 1
+
+    // Joystick 2 Autoplace Buttons
+    public static final int BUTTON_17 = 1;
+    public static final int BUTTON_18 = 2;
+    public static final int BUTTON_19 = 3;
+    public static final int BUTTON_20 = 4;
+    public static final int BUTTON_21 = 5;
+    public static final int BUTTON_22 = 6;
+    public static final int BUTTON_23 = 7;
+    public static final int BUTTON_24 = 8;
+    public static final int BUTTON_25 = 9;
+    public static final int BUTTON_26 = 10;
+    public static final int BUTTON_27 = 11;
+  }
 }
