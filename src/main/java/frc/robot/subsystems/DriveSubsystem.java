@@ -154,7 +154,7 @@ public class DriveSubsystem extends SubsystemBase {
    * Zeroes the heading of the robot.
    */
   public void zeroHeading() {
-    gyroOffset = (DriverStation.getAlliance() == Alliance.Blue ? 0 : 180) % 360;
+    gyroOffset = DriverStation.getAlliance() == Alliance.Blue ? 0 : 180;
     gyro.reset();
   }
 
