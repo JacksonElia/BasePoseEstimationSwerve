@@ -138,7 +138,7 @@ public final class Constants {
     public static final double[][] ONE_APRIL_TAG_LOOKUP_TABLE = {
       // {distance in meters, x std deviation, y std deviation, r (in degrees) std deviation}
       {0, 0.01, 0.01, 10},
-      {1.5, 0.01, 0.01, 10},
+      {1.5, .01, 0.01, 10},
       {3, 0.145, 1.20, 30},
       {4.5, 0.75, 5.0, 90},
       {6, 1.0, 8.0, 180}

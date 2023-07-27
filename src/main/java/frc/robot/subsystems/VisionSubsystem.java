@@ -108,7 +108,6 @@ public class VisionSubsystem extends SubsystemBase {
     if (aprilTagID >= 1) {
       double aprilTagX = LimelightConstants.APRIL_TAG_POSITIONS[aprilTagID - 1][0]; // April tag id starts at 1
       double aprilTagY = LimelightConstants.APRIL_TAG_POSITIONS[aprilTagID - 1][1];
-      // Added a little optimization
       Pose2d pose = getPoseFromAprilTags();
       double robotX = pose.getX();
       double robotY = pose.getY();

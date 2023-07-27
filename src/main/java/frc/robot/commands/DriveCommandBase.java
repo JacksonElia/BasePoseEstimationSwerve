@@ -18,7 +18,8 @@ public abstract class DriveCommandBase extends CommandBase {
   private final DriveSubsystem driveSubsystem;
   private final VisionSubsystem visionSubsystem;
 
-  private double lastTimeStampSeconds = 0;
+  private double currentTimestampSeconds = 0;
+  private double lastTimestampSeconds = 0;
 
   /**
    * An abstract class that handles pose estimation while driving.
@@ -35,30 +36,26 @@ public abstract class DriveCommandBase extends CommandBase {
     // Updates the pose estimator using the swerve modules
     driveSubsystem.addPoseEstimatorSwerveMeasurement();
 
-    // Updates the robot's odometry with april tags
-    double currentTimeStampSeconds = lastTimeStampSeconds;
-
     if (visionSubsystem.canSeeAprilTags()) {
-      currentTimeStampSeconds = visionSubsystem.getTimeStampSeconds();
-
-      double distanceFromClosestAprilTag = visionSubsystem.getDistanceFromClosestAprilTag();
-      // Sets the pose estimator confidence in vision based off of number of april tags and distance
-      if (visionSubsystem.getNumberOfAprilTags() == 1) {
-        double[] standardDeviations = oneAprilTagLookupTable.getLookupValue(distanceFromClosestAprilTag);
-        driveSubsystem.setPoseEstimatorVisionConfidence(standardDeviations[0], standardDeviations[1], standardDeviations[2]);
-      } else if (visionSubsystem.getNumberOfAprilTags() > 1) {
-        double[] standardDeviations = twoAprilTagLookupTable.getLookupValue(distanceFromClosestAprilTag);
-        driveSubsystem.setPoseEstimatorVisionConfidence(standardDeviations[0], standardDeviations[1], standardDeviations[2]);
-      }
-
+      currentTimestampSeconds = visionSubsystem.getTimeStampSeconds();
       // Only updates the pose estimator if the limelight pose is new
-      if (currentTimeStampSeconds > lastTimeStampSeconds) {
+      if (currentTimestampSeconds > lastTimestampSeconds) {
+        double distanceFromClosestAprilTag = visionSubsystem.getDistanceFromClosestAprilTag();
+        // Sets the pose estimator confidence in vision based off of number of april tags and distance
+        if (visionSubsystem.getNumberOfAprilTags() == 1) {
+          double[] standardDeviations = oneAprilTagLookupTable.getLookupValue(distanceFromClosestAprilTag);
+          driveSubsystem.setPoseEstimatorVisionConfidence(standardDeviations[0], standardDeviations[1], standardDeviations[2]);
+        } else if (visionSubsystem.getNumberOfAprilTags() > 1) {
+          double[] standardDeviations = twoAprilTagLookupTable.getLookupValue(distanceFromClosestAprilTag);
+          driveSubsystem.setPoseEstimatorVisionConfidence(standardDeviations[0], standardDeviations[1], standardDeviations[2]);
+        }
+        // Updates the pose estimator with the april tag vision measurement
         Pose2d limelightVisionMeasurement = visionSubsystem.getPoseFromAprilTags();
         driveSubsystem.addPoseEstimatorVisionMeasurement(limelightVisionMeasurement, Timer.getFPGATimestamp() - visionSubsystem.getLatencySeconds());
       }
     }
 
-    lastTimeStampSeconds = currentTimeStampSeconds;
+    lastTimestampSeconds = currentTimestampSeconds;
   }
 
 }
